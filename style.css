@@ -1,0 +1,214 @@
+:root {
+    --bg-color: #0f172a;
+    --card-bg: rgba(30, 41, 59, 0.7);
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --accent: #3b82f6;
+    --success: #22c55e;
+    --danger: #ef4444;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+    color: var(--text-primary);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    padding: 2rem;
+    text-align: center;
+}
+
+header {
+    margin-bottom: 2rem;
+}
+
+.emoji-container {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    position: relative;
+}
+
+.running-emoji {
+    animation: runAway 3s infinite;
+}
+
+@keyframes runAway {
+    0% { transform: translateX(0) scaleX(1); }
+    45% { transform: translateX(50px) scaleX(1); }
+    50% { transform: translateX(50px) scaleX(-1); }
+    95% { transform: translateX(0) scaleX(-1); }
+    100% { transform: translateX(0) scaleX(1); }
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    background: linear-gradient(to right, #60a5fa, #a78bfa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+    animation: bounceIn 1s ease-out;
+}
+
+@keyframes bounceIn {
+    0% { transform: scale(0.8); opacity: 0; }
+    50% { transform: scale(1.05); opacity: 1; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.subtitle {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+.details-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+}
+
+.details-card:hover {
+    transform: translateY(-5px);
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.detail-item:last-child {
+    border-bottom: none;
+}
+
+.icon {
+    font-size: 2rem;
+    margin-right: 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.text {
+    text-align: left;
+}
+
+.text strong {
+    display: block;
+    color: var(--accent);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.25rem;
+}
+
+.text p {
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-bottom: 1px dashed rgba(255,255,255,0.3);
+    outline: none;
+    transition: border-color 0.2s;
+    padding: 0.2rem 0;
+}
+
+.text p:focus {
+    border-bottom: 1px solid var(--accent);
+    background: rgba(255,255,255,0.05);
+    border-radius: 4px;
+}
+
+.instruction {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+}
+
+.action-area {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: relative;
+    min-height: 150px;
+    align-items: center;
+}
+
+.btn {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 9999px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    width: 80%;
+    max-width: 300px;
+    position: relative;
+}
+
+.btn-yes {
+    background: var(--success);
+    color: white;
+    box-shadow: 0 4px 15px rgba(34, 197, 94, 0.4);
+    z-index: 2;
+}
+
+.btn-yes:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(34, 197, 94, 0.6);
+}
+
+.btn-yes:active {
+    transform: scale(0.95);
+}
+
+.btn-no {
+    background: #334155;
+    color: var(--text-secondary);
+    z-index: 10;
+}
+
+.hidden {
+    display: none !important;
+}
+
+#successMessage {
+    background: rgba(34, 197, 94, 0.2);
+    border: 1px solid rgba(34, 197, 94, 0.5);
+    border-radius: 1rem;
+    padding: 2rem;
+    animation: bounceIn 0.5s ease-out;
+}
+
+#successMessage h2 {
+    color: var(--success);
+    margin-bottom: 0.5rem;
+}

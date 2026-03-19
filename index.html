@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jantar de Despedida!</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="emoji-container">
+                <span class="running-emoji">🏃‍♂️</span>
+                <span class="building-emoji">🏢</span>
+            </div>
+            <h1 class="title">Fuga Planejada com Sucesso!</h1>
+            <p class="subtitle">Chegou a hora de dar tchau! Venha celebrar (ou chorar) no meu jantar de despedida.</p>
+        </header>
+
+        <section class="details-card">
+            <div class="detail-item">
+                <span class="icon">📅</span>
+                <div class="text">
+                    <strong>Data</strong>
+                    <!-- Text is contenteditable so user can easily change it, or edit the HTML directly -->
+                    <p contenteditable="true">Sexta-feira, 25 de Outubro</p>
+                </div>
+            </div>
+            <div class="detail-item">
+                <span class="icon">⏰</span>
+                <div class="text">
+                    <strong>Horário</strong>
+                    <p contenteditable="true">19:30 em diante</p>
+                </div>
+            </div>
+            <div class="detail-item">
+                <span class="icon">📍</span>
+                <div class="text">
+                    <strong>Localização</strong>
+                    <p contenteditable="true">Barzinho da Esquina (Rua Fictícia, 123)</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="instruction">Por favor, confirme sua presença abaixo:</div>
+
+        <section class="action-area" id="actionArea">
+            <button id="btnYes" class="btn btn-yes">Com certeza vou! 🍻</button>
+            <button id="btnNo" class="btn btn-no">Não posso (Mentiroso) 🤥</button>
+        </section>
+        
+        <div id="successMessage" class="hidden">
+            <h2>AEEEEE! 🎉</h2>
+            <p>Sabia que você não ia perder essa! Nos vemos lá!</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
