@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // 5. O site vai gerar um link de "API URL" (parecido com https://sheetdb.io/api/v1/algumacoisa).
         // 6. Volte aqui e substitua 'COLE_SUD_API_URL_AQUI_ENTRE_AS_ASPAS' pelo link que o SheetDB gerou:
 
-        const urlSheetDB = 'https://sheetdb.io/api/v1/jkdti18cyric5';
+        const urlSheetDB = 'COLE_SUD_API_URL_AQUI_ENTRE_AS_ASPAS';
 
         if (urlSheetDB !== 'COLE_SUD_API_URL_AQUI_ENTRE_AS_ASPAS') {
             fetch(urlSheetDB, {
