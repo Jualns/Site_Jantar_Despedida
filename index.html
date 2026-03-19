@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,15 +9,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 </head>
+
 <body>
     <div class="container">
         <header>
             <div class="emoji-container">
-                <span class="running-emoji">🏃‍♂️</span>
-                <span class="building-emoji">🏢</span>
+                <span class="plane-emoji">✈️</span>
+                <span class="dollar-emoji">💵</span>
             </div>
-            <h1 class="title">Fuga Planejada com Sucesso!</h1>
-            <p class="subtitle">Chegou a hora de dar tchau! Venha celebrar (ou chorar) no meu jantar de despedida.</p>
+            <h1 class="title">De João BI para João Dolarizado!</h1>
+            <p class="subtitle">O menino cresceu e vai ganhar em dólar! Venha celebrar (e tentar pedir um empréstimo) no
+                meu jantar de despedida, pois estou indo para uma oportunidade fora.</p>
         </header>
 
         <section class="details-card">
@@ -38,7 +41,8 @@
             <div class="detail-item">
                 <span class="icon">📍</span>
                 <div class="text">
-                    <strong>Localização</strong>
+                    <strong>Localização <a href="https://maps.google.com/?q=-23.550520,-46.633308" target="_blank"
+                            class="maps-link">(Ver no Maps)</a></strong>
                     <p contenteditable="true">Barzinho da Esquina (Rua Fictícia, 123)</p>
                 </div>
             </div>
@@ -50,7 +54,7 @@
             <button id="btnYes" class="btn btn-yes">Com certeza vou! 🍻</button>
             <button id="btnNo" class="btn btn-no">Não posso (Mentiroso) 🤥</button>
         </section>
-        
+
         <div id="successMessage" class="hidden">
             <h2>AEEEEE! 🎉</h2>
             <p>Sabia que você não ia perder essa! Nos vemos lá!</p>
@@ -58,4 +62,5 @@
     </div>
     <script src="script.js"></script>
 </body>
+
 </html>
