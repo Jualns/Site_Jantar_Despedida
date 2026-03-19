@@ -188,8 +188,30 @@ header {
 
 .instruction {
     color: var(--text-secondary);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     font-weight: bold;
+}
+
+.name-container {
+    margin-bottom: 1.5rem;
+}
+
+.name-input {
+    width: 80%;
+    max-width: 300px;
+    padding: 0.8rem 1.2rem;
+    border-radius: 9999px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(30, 41, 59, 0.5);
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.name-input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
 }
 
 .action-area {

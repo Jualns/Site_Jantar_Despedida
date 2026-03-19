@@ -27,10 +27,10 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     btnNo.addEventListener('mouseover', moveBtnNo);
-    
+
     // Suporte para mobile
     btnNo.addEventListener('touchstart', (e) => {
-        e.preventDefault(); 
+        e.preventDefault();
         moveBtnNo();
     });
 
@@ -42,10 +42,53 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Lógica para o botão "Com certeza vou!"
     btnYes.addEventListener('click', () => {
+        const guestNameInput = document.getElementById('guestName');
+        const guestName = guestNameInput.value.trim();
+
+        if (!guestName) {
+            alert('Por favor, digite seu nome para eu saber quem está confirmando!');
+            guestNameInput.focus();
+            return;
+        }
+
         // Esconder botões e instrução
         actionArea.classList.add('hidden');
         document.querySelector('.instruction').classList.add('hidden');
-        
+        document.querySelector('.name-container').classList.add('hidden');
+
+        // ==== SALVAR LISTA NO GOOGLE SHEETS ====
+
+        // Vamos usar o SheetDB para salvar os nomes direto numa planilha sua do Google de forma grátis!
+        // COMO CONFIGURAR (Leva 1 minuto):
+        // 1. Crie uma planilha nova no Google Sheets.
+        // 2. Coloque "Nome" no quadrado A1, e "Data" no quadrado B1.
+        // 3. Acesse https://sheetdb.io, faça login com o Google e clique em "Create new" (botão azul).
+        // 4. Copie o endereço (URL) da planilha que você criou e cole lá no SheetDB.
+        // 5. O site vai gerar um link de "API URL" (parecido com https://sheetdb.io/api/v1/algumacoisa).
+        // 6. Volte aqui e substitua 'COLE_SUD_API_URL_AQUI_ENTRE_AS_ASPAS' pelo link que o SheetDB gerou:
+
+        const urlSheetDB = 'https://sheetdb.io/api/v1/jkdti18cyric5';
+
+        if (urlSheetDB !== 'COLE_SUD_API_URL_AQUI_ENTRE_AS_ASPAS') {
+            fetch(urlSheetDB, {
+                method: "POST",
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    data: [
+                        {
+                            'Nome': guestName,
+                            'Data': new Date().toLocaleString('pt-BR')
+                        }
+                    ]
+                })
+            }).then(() => console.log('Salvo com sucesso na planilha!'));
+        }
+
+        // ========================================
+
         // Mostrar mensagem de sucesso
         successMessage.classList.remove('hidden');
 
